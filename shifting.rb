@@ -8,4 +8,4 @@ def shifting_letters(s = "abc", shifts = [3,5,9])
     end
   end
 end
-shifting_letterss
+shifting_letters
