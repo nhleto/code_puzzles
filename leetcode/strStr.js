@@ -4,28 +4,27 @@
  * @return {number}
  */
 var strStr = function (haystack, needle) {
-  if (!needle) return 0;
-  if (!haystack) return -1;
-  if (haystack.length < needle.length) return -1;
+    if (needle === '') return 0;
 
-  let i = 0;
-  let j = 0;
+    let i = 0
+    let j = 0
 
-  while (i < haystack.length && j < needle.length) {
-    let hayStackElem = haystack[i]
-    let needleElem = needle[j]
-    if (hayStackElem === needleElem) {
-      ++i;
-      ++j;
-    } else {
-      i = ++i - j;
-      j = 0;
+    while(i < haystack.length && j < needle.length) {
+        if (haystack[i] === needle[j]) {
+            i++
+            j++
+        } else {
+            i = ++i - j
+            j= 0
+        }
     }
-  }
 
-  if (j === needle.length) return i - j;
+    if (j < needle.length()) {
+        return - 1
+    } else {
+        return i - j;
+    }
 
-  return -1;
 };
 
-strStr("mississippi", "issip");
+strStr("aaaaa", "bba");
