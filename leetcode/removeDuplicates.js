@@ -3,17 +3,16 @@
  * @return {number}
  */
  var removeDuplicates = function(nums) {
-    // Loop through the array
-    // assign identifer to check against
-    // check every item in the loop and replace if it matches
-
-    for (let i = 0; i < nums.length; i++) {
-        if (nums[i] === nums[i + 1]) {
-            nums[i] = '_'
-        }
+    for(i = 0; i < nums.length - 1; i++) {
+      if(i > nums.length - 1) {
+        break;
+      }
+      if (nums[i] === nums[i + 1]) {
+        nums.splice(i, 1);
+        i--;
+      }
     }
     return nums.length;
-
 };
 
 console.log(removeDuplicates([1,1,2]))
