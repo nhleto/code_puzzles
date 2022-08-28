@@ -8,6 +8,7 @@ var maxSubArray = function(nums) {
 
     for (let i = 0; i < globalIndex; i++) {
         runningTotal += nums[i]
+        if (runningTotal += nums[i] )
         globalIndex++
     }
 };
