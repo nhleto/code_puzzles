@@ -4,20 +4,16 @@
  * @return {boolean}
  */
 var isSubsequence = function(s, t) {
-    let mapping_s_t = new Map()
+    let i = 0, j = 0;
 
-    let splitS = s.split('')
-    let splitT = t.split('')
-
-    for (let i = 0; i < splitT.length; i++) {
-        for (let j = 0; j < splitT.length; j++) {
-            if (splitT[i] === splitS[j] && !mapping_s_t.get(splitT[i])) {
-                mapping_s_t.set(splitT[i], splitS[j])
-            }
+    while(j < t.length) {
+        if(s[i] === t[j]) {
+            i++;
         }
+        j++;
     }
-
-    console.log(mapping_s_t)
+    
+    return i === s.length
 };
 
-isSubsequence("abc", "ahbgdc")
+isSubsequence("ab", "baab")
